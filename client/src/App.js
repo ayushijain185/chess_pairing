@@ -16,9 +16,11 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={isLoggedIn ? <Home /> : <Login />} />
+        
+        
         <Route
           path="/create"
           element={isLoggedIn ? <CreateTournament /> : <Login />}
