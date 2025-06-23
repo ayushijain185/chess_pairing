@@ -25,18 +25,7 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {token && (
-              <li className="nav-item">
-                <Link className="nav-link" to="/create">Create Tournament</Link>
-              </li>
-              
-            )}
-            {token && (
-              <li className="nav-item">
-                <Link className="nav-link" to="/all-tournaments">All Tournament</Link>
-              </li>
-            )}
-
+           
             {!token ? (
               <>
                 <li className="nav-item">
@@ -47,11 +36,20 @@ const Navbar = () => {
                 </li>
               </>
             ) : (
+              <>
+
+                 <li className="nav-item">
+                <Link className="nav-link" to="/create">Create Tournament</Link>
+                </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="/all-tournaments">All Tournament</Link>
+              </li>
               <li className="nav-item">
                 <button className="btn btn-outline-light btn-sm ms-2" onClick={handleLogout}>
                   Logout
                 </button>
               </li>
+              </>
             )}
           </ul>
         </div>
